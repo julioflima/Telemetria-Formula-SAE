@@ -14,7 +14,7 @@ namespace Database
 {
     public partial class fDataBank : Form
     {
-        bool Readed = false;
+        bool Readed = false;//lolo
         bool Restart = false;
         bool Stop = false;
         bool SaveRefresh = false;
