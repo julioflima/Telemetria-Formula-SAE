@@ -42,7 +42,6 @@ systems are provided by automotive telemetry \[3\] and real-time
 performance capture and analysis systems. An example is shown, Figure 1.
 
 <img src="./media/image1.png" width="215" height="161" />
-
 Fig. 1: F1 2002 Telemetry
 
 This work proposes the development of an SAE Formula level of telemetry
