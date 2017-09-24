@@ -145,7 +145,7 @@ finally added, will comprise a number in the decimal base and not more
 only one character. In this way a pattern of data arrangement was
 developed in a string of characters. An example is shown in Fig. 7.
 
-<img width="400" alt="image6" src="https://user-images.githubusercontent.com/17098382/30785618-fae01e14-a13f-11e7-99e2-3f8b4bc04ae5.png"><br>
+<img width="450" alt="image6" src="https://user-images.githubusercontent.com/17098382/30785618-fae01e14-a13f-11e7-99e2-3f8b4bc04ae5.png"><br>
 Fig. 7: Designed Protocol
 
 Which character "?", was placed to represent the beginning of the
@@ -303,10 +303,10 @@ absorbers for the electrical case support, along with the elimination of
 contacts via connectors, requiring that they are all welded onto a
 motherboard.
 
-![image10](https://user-images.githubusercontent.com/17098382/30785635-425cd700-a140-11e7-964d-6884a6815498.jpeg)<br>
+<img width="450" alt="image6" src="https://user-images.githubusercontent.com/17098382/30785635-425cd700-a140-11e7-964d-6884a6815498.jpeg"><br>
 Fig. 10: Case of Prototype Opened
 
-![image11](https://user-images.githubusercontent.com/17098382/30785636-425d4118-a140-11e7-964b-385d8f9aef57.jpeg)<br>
+<img width="450" alt="image6" src="https://user-images.githubusercontent.com/17098382/30785636-425d4118-a140-11e7-964b-385d8f9aef57.jpeg"><br>
 Fig. 12: Final Prototype
 
 ### Tests Performed
