@@ -2,27 +2,26 @@
 
 ***Embedded Automotive System, X-Bee Connected to a C\# Supervisory***
 
-Julio Cesar Ferreira Lima
+Julio Cesar Ferreira Lima ; 
 Melisse P. Cabral
 
 Universidade Federal do Ceará, Sobral, Brasil
 
-julio\_flima@hotmail.com
+julio\_flima@hotmail.com ; 
 melissecabral@gmail.com
 
 
-*Abstract*—This report proposes to expose the development of a telemetry
+**Abstract*—This report proposes to expose the development of a telemetry
 destined to the automotive world, specifically for the Formula SAE
 competition. They were used to carry out the project, free software
 development as Arduino IDE and Visual Studio. During the report will be
 presented diverse environments of developments, aimed not only the
 hardware, but as well as the software. Obtaining as well as the results
-of the final object, as hardware, software, charts and graphs.
+of the final object, as hardware, software, charts and graphs.*
 
-*Key-words: telemetry; formula sae; visual studio; arduino, xbee.*
+**Key-words: telemetry; formula sae; visual studio; arduino, xbee.**
 
-Introduction
-============
+## Introduction
 
 In the year 2015, Formula 1 has raised about $ 965 million \[1\], which
 justifies all the effort aimed at perfecting and studying techniques and
@@ -63,8 +62,7 @@ process, protocoling process, supervisory system; In Section 3 the
 analysis of the results obtained about the prototype and the supervisory
 system is presented. Finally, Section 4 sets out the conclusions.
 
-Methodology
-===========
+## Methodology
 
 In the telemetry prototype project, the ATmega328 microcontroller was
 used only to make the instrumental acquisition. The platform that
@@ -92,13 +90,13 @@ some logic level interfaces of the chosen sensors, since the application
 scope of the sensors used here are of industrial application that
 generally operates in a logic level 0-12V or 0-24V.
 
-1.  ###  Digital: The digital acquisitions can be divided into two, the first in discrete states used in drives based on discrete components such as relay, button, inductive, capacitive sensor, such components are discrete since it does not have an operating set-point and only have two states, not actuated and actuated, similar to low level which comprises in the presence of 0V and high level which comprises in the presence of a voltage greater than 3V, in a digital input. Modern sensors also have another ability to communicate with microcontrollers, by sending more data or more complex data through the sending of words through a specific communication. For these sensors a library is needed that identifies the meaning of the received words. These sensors with the modernity and the improvement of techniques have been more and more present in the world of development low cost, but still have a certain complexity of interpretation only some more popular are of public domain. Being part of an open-source community, the use of this type of sensor makes it very easy to develop larger applications, because it would be very costly to create a library that interprets every sensor that one decides to use.
+1. Digital: The digital acquisitions can be divided into two, the first in discrete states used in drives based on discrete components such as relay, button, inductive, capacitive sensor, such components are discrete since it does not have an operating set-point and only have two states, not actuated and actuated, similar to low level which comprises in the presence of 0V and high level which comprises in the presence of a voltage greater than 3V, in a digital input. Modern sensors also have another ability to communicate with microcontrollers, by sending more data or more complex data through the sending of words through a specific communication. For these sensors a library is needed that identifies the meaning of the received words. These sensors with the modernity and the improvement of techniques have been more and more present in the world of development low cost, but still have a certain complexity of interpretation only some more popular are of public domain. Being part of an open-source community, the use of this type of sensor makes it very easy to develop larger applications, because it would be very costly to create a library that interprets every sensor that one decides to use.
 
-2.  ###  Analogic: Immensely more diffuse, because it refers to the beginnings of industrial instrumentation, this type of sensor is easy to read by means of analog inputs contained in the microcontroller. These inputs interpret the received voltage value, which must not be greater than the internal reference voltage. Although it is simple to acquire this data, the complexity in the interpretation of the transducer, an element that transforms a real-world quantity into an electrical quantity, is sometimes discouraged from being used, requiring some training in analog electronics by the designer, to conditioning the microcontroller interpretation range.
+2. Analogic: Immensely more diffuse, because it refers to the beginnings of industrial instrumentation, this type of sensor is easy to read by means of analog inputs contained in the microcontroller. These inputs interpret the received voltage value, which must not be greater than the internal reference voltage. Although it is simple to acquire this data, the complexity in the interpretation of the transducer, an element that transforms a real-world quantity into an electrical quantity, is sometimes discouraged from being used, requiring some training in analog electronics by the designer, to conditioning the microcontroller interpretation range.
 
-3.  ### Sensors:
+3. Sensors:
 
-    1.  #### Counter: One of the most important parameters in a car is the speed and the RPM, since they provide relations of engine status, steering mode and performance with the relation between speed and rotation, being the first measure with the placement of a sensor in the wheel and the second on the drive shaft. In this way, after detected the rotation, one obtains the angular speed of the motor and wheel, it is not dificult to obtain the engine speed and the speed of the car, (1) and (2). These two parameters can be acquired by an inductive sensor, which when subjected to a voltage at its terminals, varies the state of the output when subjected to variations of presence and no presence of a metal. This type of sensor is of the discrete digital type, being widely used in industrial applications and found largely on a non-TTL level, sometimes requiring a conversion interface, which can be done by a voltage divider \[8\], coupling via voltage regulator or driver, respectively represented by ICs such as LM7805 and ULN2003.
+    1. Counter: One of the most important parameters in a car is the speed and the RPM, since they provide relations of engine status, steering mode and performance with the relation between speed and rotation, being the first measure with the placement of a sensor in the wheel and the second on the drive shaft. In this way, after detected the rotation, one obtains the angular speed of the motor and wheel, it is not dificult to obtain the engine speed and the speed of the car, (1) and (2). These two parameters can be acquired by an inductive sensor, which when subjected to a voltage at its terminals, varies the state of the output when subjected to variations of presence and no presence of a metal. This type of sensor is of the discrete digital type, being widely used in industrial applications and found largely on a non-TTL level, sometimes requiring a conversion interface, which can be done by a voltage divider \[8\], coupling via voltage regulator or driver, respectively represented by ICs such as LM7805 and ULN2003.
 
 <span id="_Hlk480034195" class="anchor"></span>
 \(c \bullet v \bullet 60 = \ c \bullet \frac{1}{T} \bullet 60 = RPM\)
@@ -111,21 +109,21 @@ Where "v" is the angular speed, "c" is the number of rotations, "T" is
 the time interval of the acquisitions, "r" is the radius of the wheel
 and "V" is the speed of the car.
 
-#### States: State variables are decisive for the atuation of some car devices and are also important of be measured, such as the gear position. Although some analogical conditioning that this greatness may have, they basically determine logical states, because they are enough. The gear position is picked up by a button mounted on a device called the paddle shifter, which as soon as it is pressed sends a high level value to the microcontroller that will act on gearbox. However this value will be saved and shown to the pilot, as it is referring to the current gear. The type of configuration required for this type of sensor is a pull-down resistor, aligned to a capacitor in parallel to avoid the effect of noise caused by the mechanical switch \[8\]. This process of removing noise generated by mechanical effects is known as debouncer. An example is shown in Figure 2.
+States: State variables are decisive for the atuation of some car devices and are also important of be measured, such as the gear position. Although some analogical conditioning that this greatness may have, they basically determine logical states, because they are enough. The gear position is picked up by a button mounted on a device called the paddle shifter, which as soon as it is pressed sends a high level value to the microcontroller that will act on gearbox. However this value will be saved and shown to the pilot, as it is referring to the current gear. The type of configuration required for this type of sensor is a pull-down resistor, aligned to a capacitor in parallel to avoid the effect of noise caused by the mechanical switch \[8\]. This process of removing noise generated by mechanical effects is known as debouncer. An example is shown in Figure 2.
 
 <img src="./media/image2.png" width="124" height="138" />
 
 Fig. 2: Schematic Resistor in Pull-Down and Debounce
 
-1.  #### Modern: The DS18B20 sensor is a temperature sensor and has a 1-wire protocol for communication. Among its advantages is the use of only one wire for communication bus, precision and a relative amount of encapsulations that can be found in the market. In this work the immersible stainless steel encapsulation was used, ideal for industrial applications as well as for temperature measurement of oil tank. Another parameter very relevant to the performance of the car is the humidity and temperature of the air, so this data was captured through the DHT22 sensor. It communicates via single-bus protocol, where it also requires only one wire for communication bus. Both protocols are open-source and are available for use across multiple libraries, facilitating implementation..
+1. Modern: The DS18B20 sensor is a temperature sensor and has a 1-wire protocol for communication. Among its advantages is the use of only one wire for communication bus, precision and a relative amount of encapsulations that can be found in the market. In this work the immersible stainless steel encapsulation was used, ideal for industrial applications as well as for temperature measurement of oil tank. Another parameter very relevant to the performance of the car is the humidity and temperature of the air, so this data was captured through the DHT22 sensor. It communicates via single-bus protocol, where it also requires only one wire for communication bus. Both protocols are open-source and are available for use across multiple libraries, facilitating implementation..
 
-2.  #### Traking Position: Some sensors have the function of tracking the position of a device such as the steering wheel, brake, throttle, oil level and gas level. They can be traced by an analog device called a potentiometer \[8\], which undergoes a potential difference at its ends, in case of variation of the axis position, the middle terminal will present a voltage variation, obtaining minimum voltage when connected to GND and maximum when connected to VCC. An example is shown in Figure 3.
+2. Traking Position: Some sensors have the function of tracking the position of a device such as the steering wheel, brake, throttle, oil level and gas level. They can be traced by an analog device called a potentiometer \[8\], which undergoes a potential difference at its ends, in case of variation of the axis position, the middle terminal will present a voltage variation, obtaining minimum voltage when connected to GND and maximum when connected to VCC. An example is shown in Figure 3.
 
 <img src="./media/image3.png" width="124" height="112" />
 
 Fig. 3: Schematic of Tracking Position
 
-### Comunication: The X-bee module needs two interfaces, if not used as the main controller, one to interface its logic level, because although it is TTL, it works at a voltage level of 3.3V, lower than the ATmega 328. And another to communicate with the computer. Both boards are open source and can be developed, but for this work commercial boards were used. In this work, it was tested with a Point-to-Point communication topology, by simply setting internaly the X-Bee to router and the X-Bee ID address that wished to be communicated, in both X-Bee \[9\]. So in a network there would be no collision of information, since the information is addressed. In order to increase the radius of access, just like the one used in Formula 1, you can use topologies such as Zigbee Mesh and Cluster Tree. An example is shown below in figures 5 and 6.
+Comunication: The X-bee module needs two interfaces, if not used as the main controller, one to interface its logic level, because although it is TTL, it works at a voltage level of 3.3V, lower than the ATmega 328. And another to communicate with the computer. Both boards are open source and can be developed, but for this work commercial boards were used. In this work, it was tested with a Point-to-Point communication topology, by simply setting internaly the X-Bee to router and the X-Bee ID address that wished to be communicated, in both X-Bee \[9\]. So in a network there would be no collision of information, since the information is addressed. In order to increase the radius of access, just like the one used in Formula 1, you can use topologies such as Zigbee Mesh and Cluster Tree. An example is shown below in figures 5 and 6.
 
 <img src="./media/image4.png" width="80" height="26" />
 
@@ -311,8 +309,7 @@ a list of files of the extension .xml present in the current directory
 of the system and when we select a file it is loaded into the dashboard
 and the graph of the data contained in it is shown.
 
-Results and Discussions
-=======================
+## Results and Discussions
 
     1.  Prototype
         ---------
@@ -358,19 +355,17 @@ some cases only a certain delay in the animations.
 The system went through several code usage tests and code analysis after
 finalization and no critical issues were found.
 
-Conclusions
-===========
+## Conclusions
 
-#####  The prototype met all the proposed objectives. Although the project is only a prototype, with the advent of this, given by the arduous process until then, the implementation of future sensors will have very reduced difficulty, being limited basically to only an implementation of sensors in the microcontroller.
+The prototype met all the proposed objectives. Although the project is only a prototype, with the advent of this, given by the arduous process until then, the implementation of future sensors will have very reduced difficulty, being limited basically to only an implementation of sensors in the microcontroller.
 
-#####  With a low cost of production and excellent accuracy in sending data, telemetry has achieved great results in terms of cost-benefit. Since this type of technology is used by the most expensive sport in the world, then it has high valuation within the market, a factor that makes cost-benefit a differential. Another differential in this product was its ability to carry out all the acquisitions in an easy way in relation to the user, guaranteeing a good user experience. Another aspect that shows itself as a differential of the product is its non-dependence on other software for plotting graphs later acquired by the platform, and in contrast the possibility of exporting to other software like Excel, since tables in "XML" mode also can be incorporated by it. Even because it is a simple hardware, low cost, it was possible to notice an immense robustness, since past months of the project realization, still works and even was already the object of implementation of another project, based on its source code. 
+With a low cost of production and excellent accuracy in sending data, telemetry has achieved great results in terms of cost-benefit. Since this type of technology is used by the most expensive sport in the world, then it has high valuation within the market, a factor that makes cost-benefit a differential. Another differential in this product was its ability to carry out all the acquisitions in an easy way in relation to the user, guaranteeing a good user experience. Another aspect that shows itself as a differential of the product is its non-dependence on other software for plotting graphs later acquired by the platform, and in contrast the possibility of exporting to other software like Excel, since tables in "XML" mode also can be incorporated by it. Even because it is a simple hardware, low cost, it was possible to notice an immense robustness, since past months of the project realization, still works and even was already the object of implementation of another project, based on its source code. 
 
-#####  The prototype should and will be improved as regards its latency in response to the computer, but such latency given the time of slow analysis, intrinsic characteristic of the human, does not compromise at all its analysis. It would also be interesting to program the Atmega 328 code at Arduino IDE using the object-oriented programming paradigm (OOP), in order to make code simpler to understand and in a more modern way, since OOP is the most appropriate currently being programmed, avoiding many repetitions of lines of code.
+The prototype should and will be improved as regards its latency in response to the computer, but such latency given the time of slow analysis, intrinsic characteristic of the human, does not compromise at all its analysis. It would also be interesting to program the Atmega 328 code at Arduino IDE using the object-oriented programming paradigm (OOP), in order to make code simpler to understand and in a more modern way, since OOP is the most appropriate currently being programmed, avoiding many repetitions of lines of code.
 
-#####  As in all aspects of the project, other open-source projects were considered, this project can also be seen as open-source and was made available on the GitHub platform \[14\]. 
+As in all aspects of the project, other open-source projects were considered, this project can also be seen as open-source and was made available on the GitHub platform \[14\]. 
 
-References
-============
+## References
 
 1.  AutoSport Magazine, “Formula 1 team payments for 2016
     revealed,” 2016. \[Online\]. Available:
