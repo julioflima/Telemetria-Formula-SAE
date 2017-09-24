@@ -119,21 +119,17 @@ Fig. 2: Schematic Resistor in Pull-Down and Debounce
         4. Traking Position: Some sensors have the function of tracking the position of a device such as the steering wheel, brake, throttle, oil level and gas level. They can be traced by an analog device called a potentiometer \[8\], which undergoes a potential difference at its ends, in case of variation of the axis position, the middle terminal will present a voltage variation, obtaining minimum voltage when connected to GND and maximum when connected to VCC. An example is shown in Figure 3.
 
 <img src="./media/image3.png" width="124" height="112" />
-
 Fig. 3: Schematic of Tracking Position
 
     4. Comunication: The X-bee module needs two interfaces, if not used as the main controller, one to interface its logic level, because although it is TTL, it works at a voltage level of 3.3V, lower than the ATmega 328. And another to communicate with the computer. Both boards are open source and can be developed, but for this work commercial boards were used. In this work, it was tested with a Point-to-Point communication topology, by simply setting internaly the X-Bee to router and the X-Bee ID address that wished to be communicated, in both X-Bee \[9\]. So in a network there would be no collision of information, since the information is addressed. In order to increase the radius of access, just like the one used in Formula 1, you can use topologies such as Zigbee Mesh and Cluster Tree. An example is shown below in figures 5 and 6.
 
 <img src="./media/image4.png" width="80" height="26" />
-
 Fig. 4: Point-to-Point Network Arrangement
 
 <img src="./media/image5.png" width="157" height="83" />
-
 Fig. 5: Zigbee Mesh Network Arrangement
 
 <img src="./media/image5.png" width="152" height="83" />
-
 Fig. 6: Cluster Tree Network Arrangement
 
 Communication with the ATmega 328 is via RS232, so the X-Bee mirrors the
@@ -162,7 +158,6 @@ only one character. In this way a pattern of data arrangement was
 developed in a string of characters. An example is shown in Fig. 7.
 
 <img src="./media/image6.png" width="299" height="15" />
-
 Fig. 7: Designed Protocol
 
 Which character "?", was placed to represent the beginning of the
@@ -198,7 +193,6 @@ platform. There is only one class where all features are arranged named
 Database.
 
 <img src="./media/image7.png" width="303" height="316" />
-
 Fig. 8: UML Class Diagram
 
 The data reception by the serial port is done by a native library in C\#
@@ -245,7 +239,6 @@ also possible to check the data received by the Arduino at time of
 execution.
 
 <img src="./media/image8.png" width="312" height="217" />
-
 Fig. 9: Window Cockpick
 
 In this way, it is possible for any member of the team through the
@@ -270,7 +263,6 @@ size by means of attributes:
 -   CHART.ChartAreas\[0\].AxisX.Minimum
 
 <img src="./media/image9.png" width="287" height="228" />
-
 Fig. 10: Window Graphs
 
 It is possible for the graph to grow dynamically so that it is never
@@ -308,8 +300,8 @@ and the graph of the data contained in it is shown.
 
 ## Results and Discussions
 
- 1. ### Prototype  
-    
+### Prototype  
+
 Due to the impossibility of designing an entire car for sensor
 implementation and testing, due to cost and time, a prototype adapted
 from a joystick originally designed for video games was developed. All
@@ -325,15 +317,12 @@ contacts via connectors, requiring that they are all welded onto a
 motherboard.
 
 <img src="./media/image10.jpeg" width="298" height="185" />
-
 Fig. 10: Case of Prototype Opened
 
 <img src="./media/image11.jpeg" width="298" height="156" />
-
 Fig. 12: Final Prototype
 
-Tests Performed
----------------
+### Tests Performed
 
 Due to a tight deadline and software was devised so that the development
 occurs quickly so that its functionalities were implemented in time for
@@ -363,43 +352,22 @@ As in all aspects of the project, other open-source projects were considered, th
 
 ## References
 
-1.  AutoSport Magazine, “Formula 1 team payments for 2016
-    revealed,” 2016. \[Online\]. Available:
-    http://www.autosport.com/news/report.php/id/123649
+1.  AutoSport Magazine, “Formula 1 team payments for 2016 revealed,” 2016. \[Online\]. Available: http://www.autosport.com/news/report.php/id/123649
 
-2.  SAE Brasil, “O que é o fórmula?”. \[Online\]. Available:
-    http://www.saebrasil.org.br/eventos/programas\_estudantis/formula.aspx
+2.  SAE Brasil, “O que é o fórmula?”. \[Online\]. Available: http://www.saebrasil.org.br/eventos/programas\_estudantis/formula.aspx
 
-3.  Formula 1 Dictionary, “Telemetry”. \[Online\]. Available:
-    http://www.formula1-dictionary.net/telemetry.html
+3.  Formula 1 Dictionary, “Telemetry”. \[Online\]. Available: http://www.formula1-dictionary.net/telemetry.html
 
-4.  H. A. Zanetti e C. L. V. Oliveira. Arduino Descomplicado: Como
-    Elaborar Projetos de Eletrônica. 1ª edição. São Paulo: Érica,
-    325p, 2005.
+4.  Arduino, “Language Reference”. \[Online\]. Available: https://www.arduino.cc/en/Reference/HomePage
 
-5.  J. Blum. Explorando o Arduino. 1ª edição. Rio de Janeiro: Alta
-    Books, 386p, 2016.
+5.  J. W. Nilsson and S. A. Riedel. Circuitos eletricos. 8ª edição São Paulo: Pearson Prentice Hall, 575p, 2009.
 
-6.  A. Backes. Linguagem C: Completa e Descomplicada. 1ª edição. Rio de
-    Janeiro: Elsevier, 400p, 2012.
+6.  Digi X-CTU, 2017. \[Online\]. Available: www.digi.com
 
-7.  Arduino, “Language Reference”. \[Online\]. Available:
-    https://www.arduino.cc/en/Reference/HomePage
+7. Nelson, Design de Interação, 1980.
 
-8.  J. W. Nilsson and S. A. Riedel. Circuitos eletricos. 8ª edição São
-    Paulo: Pearson Prentice Hall, 575p, 2009.
+8. P. Deitel and H. Deitel, Visual C\# How to Program, 6th Edition.
 
-9.  Digi X-CTU, 2017. \[Online\]. Available: www.digi.com
+9. Microsoft, “C\# Guide”, Microsoft, 2016. \[Online\].
 
-10. Nelson, Design de Interação, 1980.
-
-11. P. Deitel and H. Deitel, Visual C\# How to Program, 6th Edition.
-
-12. Microsoft, “C\# Guide”, Microsoft, 2016. \[Online\].
-
-13. Microsoft, “Visual Studio Documentation”, 2017. \[Online\].
-    Available: https://docs.microsoft.com/en-us/visualstudio
-
-14. J. C. F. Lima. “Telemetria Formula SAE”, Oficial Repository of
-    This Work. \[Online\]. Available:
-    https://github.com/juloko/Telemetria-Formula-SAE
+10. Microsoft, “Visual Studio Documentation”, 2017. \[Online\]. Available: https://docs.microsoft.com/en-us/visualstudio
