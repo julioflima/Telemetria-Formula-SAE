@@ -74,8 +74,7 @@ However, the programming is not leaded towards large-scale maintenance,
 therefore opted to restrict the operating scopes, leaving it only as a
 radio for digital data communication.
 
-Instrumental Acquisition Process
---------------------------------
+### Instrumental Acquisition Process
 
 The wide adaptability of the ATmega 328 in the field of instrumentation
 makes it a favorite in the worldwide hardware development community.
@@ -146,8 +145,7 @@ possible baudrate, 115200, and the hardware that limited the
 transmission capacity was the ATmega 328, as the X-Bee could reach even
 higher speeds.
 
-Protocoling Process
--------------------
+### Protocoling Process
 
 Given the parameters identified in the car, it was realized that only
 four digits would be enough to present all the sensors, in some there
@@ -176,8 +174,7 @@ the first variable is the one closest to the initial character and
 consequently the last variable is the one closest to the final
 character.
 
-Supervisory System
-------------------
+### Supervisory System
 
 In software development, a chosen language was C\# \[1\] which although
 simple allows rapid development of applications running in the .NET
@@ -311,9 +308,8 @@ and the graph of the data contained in it is shown.
 
 ## Results and Discussions
 
-    1.  Prototype
-        ---------
-
+ 1. ### Prototype  
+    
 Due to the impossibility of designing an entire car for sensor
 implementation and testing, due to cost and time, a prototype adapted
 from a joystick originally designed for video games was developed. All
