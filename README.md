@@ -1,28 +1,15 @@
-<span id="_Hlk480046360" class="anchor"></span>***Telemetry Prototype
-Destinated to Formula SAE***
+# Telemetry Prototype Destinated to Formula SAE
 
 ***Embedded Automotive System, X-Bee Connected to a C\# Supervisory***
 
 Julio Cesar Ferreira Lima
-
-Universidade Federal do Ceará
-
-Sobral, Brasil
-
-julio\_flima@hotmail.com
-
-Rafael M. C. de Paiva, Hurgeles S. Silva,  
 Melisse P. Cabral
 
-Universidade Federal de Campina Grande
+Universidade Federal do Ceará, Sobral, Brasil
 
-Instituto de Estudos Avançados em Comunicações
+julio\_flima@hotmail.com
+melissecabral@gmail.com
 
-Campina Grande, Brasil
-
-{rafael.paiva ; hurgeles.silva}@ee.ufcg.edu.br}
-
-melisse.cabral@ccc.ufcg.edu.br
 
 *Abstract*—This report proposes to expose the development of a telemetry
 destined to the automotive world, specifically for the Formula SAE
@@ -324,8 +311,8 @@ a list of files of the extension .xml present in the current directory
 of the system and when we select a file it is loaded into the dashboard
 and the graph of the data contained in it is shown.
 
-1.  Results and Discussions
-    =======================
+Results and Discussions
+=======================
 
     1.  Prototype
         ---------
@@ -382,7 +369,8 @@ Conclusions
 
 #####  As in all aspects of the project, other open-source projects were considered, this project can also be seen as open-source and was made available on the GitHub platform \[14\]. 
 
-##### References
+References
+============
 
 1.  AutoSport Magazine, “Formula 1 team payments for 2016
     revealed,” 2016. \[Online\]. Available:
