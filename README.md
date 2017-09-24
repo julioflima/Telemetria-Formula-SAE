@@ -111,23 +111,23 @@ generally operates in a logic level 0-12V or 0-24V.
 
 4. Comunication: The X-bee module needs two interfaces, if not used as the main controller, one to interface its logic level, because although it is TTL, it works at a voltage level of 3.3V, lower than the ATmega 328. And another to communicate with the computer. Both boards are open source and can be developed, but for this work commercial boards were used. In this work, it was tested with a Point-to-Point communication topology, by simply setting internaly the X-Bee to router and the X-Bee ID address that wished to be communicated, in both X-Bee \[9\]. So in a network there would be no collision of information, since the information is addressed. In order to increase the radius of access, just like the one used in Formula 1, you can use topologies such as Zigbee Mesh and Cluster Tree. An example is shown below in figures 5 and 6.
 
-<img width="100" alt="image4" src="https://user-images.githubusercontent.com/17098382/30785610-bfc23da8-a13f-11e7-9c7f-ef0cb6251b4a.png"><br>
-Fig. 4: Point-to-Point Network Arrangement
+    <img width="100" alt="image4" src="https://user-images.githubusercontent.com/17098382/30785610-bfc23da8-a13f-11e7-9c7f-ef0cb6251b4a.png"><br>
+    Fig. 4: Point-to-Point Network Arrangement
 
-<img width="165" alt="image5-1" src="https://user-images.githubusercontent.com/17098382/30785614-e630ecaa-a13f-11e7-9787-90f2ce895e51.png"><br>
-Fig. 5: Zigbee Mesh Network Arrangement
+    <img width="165" alt="image5-1" src="https://user-images.githubusercontent.com/17098382/30785614-e630ecaa-a13f-11e7-9787-90f2ce895e51.png"><br>
+    Fig. 5: Zigbee Mesh Network Arrangement
 
-<img width="165" alt="image5-2" src="https://user-images.githubusercontent.com/17098382/30785615-f0a34c96-a13f-11e7-93bb-9a5e5abae754.png"><br>
-Fig. 6: Cluster Tree Network Arrangement
+    <img width="165" alt="image5-2" src="https://user-images.githubusercontent.com/17098382/30785615-f0a34c96-a13f-11e7-93bb-9a5e5abae754.png"><br>
+    Fig. 6: Cluster Tree Network Arrangement
 
-Communication with the ATmega 328 is via RS232, so the X-Bee mirrors the
-data received at its RS232 input and encodes them into the Zigbee
-protocol. On the other hand, the other X-Bee does the reverse process,
-sending the bytes in the computer's serial port for the supervisory to
-store and process. A better performance was adopted with the highest
-possible baudrate, 115200, and the hardware that limited the
-transmission capacity was the ATmega 328, as the X-Bee could reach even
-higher speeds.
+    Communication with the ATmega 328 is via RS232, so the X-Bee mirrors the
+    data received at its RS232 input and encodes them into the Zigbee
+    protocol. On the other hand, the other X-Bee does the reverse process,
+    sending the bytes in the computer's serial port for the supervisory to
+    store and process. A better performance was adopted with the highest
+    possible baudrate, 115200, and the hardware that limited the
+    transmission capacity was the ATmega 328, as the X-Bee could reach even
+    higher speeds.
 
 ### Protocoling Process
 
